@@ -19,3 +19,21 @@ If you want to complicate it a bit, you can:
 - Why does the script take so long before it gives you the initial prompt?
 - What are some things we could do to make that part faster?
 
+# Flask App
+Flask is a python library that will run a server on your computer. When you go to a website, you are accessing somebody else's server. Here we will run our own locally, that only we can access.
+
+Install [Flask](https://flask.palletsprojects.com/en/1.1.x/). You do not need to create a new project folder.
+
+You can check if you are inside a Python venv - [here](https://stackoverflow.com/questions/1871549/determine-if-python-is-running-inside-virtualenv) are some different ways to do so. YOU SHOULD ONLY BE INSIDE THE VENV WHILE WORKING ON THIS PROJECT. Whenever you open a new command line (Windows), it will not be in a venv. Terminals in VSCode may or may not be.
+
+Create a new python file, this will be the Flask app. I recommend you try the simple example they have before getting anything more complex.
+
+Build an app that just has one route - the root `/` (like in the example). This app should do a few things when you visit it:
+- Import the `GithubParser` & show the jobs that have been parsed by it.
+- Use at the [url parameters](https://flask.palletsprojects.com/en/1.1.x/quickstart/#the-request-object) for search and limit terms. You can use whatever phrase/word you want as the keys.
+  - Filter the displayed results by the search term.
+  - Limit the results by the limit (or 25, whichever is smaller)
+  - Both of these terms are optional
+- Make sure the results are in JSON form.
+
+Idk how comfortable you are with this, it may be either very easy or very hard. If you have troubles, try to break it down as simply as possible (eg, hard-code the initial filter & limit)
