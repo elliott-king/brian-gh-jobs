@@ -48,7 +48,9 @@ class InteractiveTerminal:
     def ask_search(self):
         res = input("What kind of job would you like to search for? \n")
         count = 10
-        print(self.gh.search_jobs(res, count))
+        job_list = self.gh.search_jobs(res, count)
+        for job in job_list:
+            print(job['title'])
         # TODO: print the names of the top ten jobs that match the search       
 
     def request_loop(self):
