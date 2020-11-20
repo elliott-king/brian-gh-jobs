@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>
+    Let's look for jobs!
+</h1>
+<ul>
+    {% for job in job_init %}
+        <li>{{ job['title'] }}</li>
+    {% endfor %}
+</ul>
+<a href="/jobsearch">Job Search</a>
+{% endblock %}

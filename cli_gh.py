@@ -35,7 +35,6 @@ class GithubParser:
         return filtered_jobs[:max_count]
 
 class InteractiveTerminal:
-
     def __init__(self):
         self.gh = GithubParser()
         self.gh.scrape_jobs()
@@ -50,9 +49,7 @@ class InteractiveTerminal:
         res = input("What kind of job would you like to search for? \n")
         count = 10
         print(self.gh.search_jobs(res, count))
-        # TODO: print the names of the top ten jobs that match the search
-
-        
+        # TODO: print the names of the top ten jobs that match the search       
 
     def request_loop(self):
         # TODO: continue running until the user indicates they want to stop.
