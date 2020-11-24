@@ -17,7 +17,11 @@ If you want to complicate it a bit, you can:
 ## Some follow-up questions
 - line 22
 - Why does the script take so long before it gives you the initial prompt?
+  - requesting a bunch of information
+  - multiple requests for multiple urls
 - What are some things we could do to make that part faster?
+  - stop requesting once there are no more jobs
+  - save everything to file, only read from file (caching)
 
 # Flask App
 Flask is a python library that will run a server on your computer. When you go to a website, you are accessing somebody else's server. Here we will run our own locally, that only we can access.
@@ -37,3 +41,19 @@ Build an app that just has one route - the root `/` (like in the example). This 
 - Make sure the results are in JSON form.
 
 Idk how comfortable you are with this, it may be either very easy or very hard. If you have troubles, try to break it down as simply as possible (eg, hard-code the initial filter & limit)
+
+## Redirecting Back to the Homepage with Your Search Results
+
+So you know how to use URL parameters (we used them to filter a json response) and also how to use html templates. I would like to make your current jobsearch form usable with html (but a little cleaner). The expected functionality is pretty close to the current `app_html.py`, you will just need to modify the jobsearch function from `job_search.py` a bit:
+
+- Going to the root `'/'` will show a link, and also a list of job titles (already done in `app_html.py`)
+  - the job titles will be dependent on the query strings/url params
+  - This can be tested by directly typing `localhost:5000?search=whatever&limit=a_number`
+- Going to the `/jobsearch` endpoint will show a form (you have this done in `job_search.py`)
+- POSTing to the `/jobsearch` endpoint will extract the search query and limit from the form, then redirect to the index
+  - The index page should reflect the given search query and limit
+  - You can pass query strings in the `url_for` method
+
+# Next Steps
+
+If you have this down, we will go into the concept of 'databases' next. We will follow the more intense [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/) to learn how to create databases & a larger project, then we will make a job board using the Github Jobs. If you want to jump ahead, feel free to start following the tutorial.
