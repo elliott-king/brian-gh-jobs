@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, render_template
 
-from cli_solution import GithubParser
+from cli_gh import GithubParser
 
 app = Flask(__name__)
 GH = GithubParser()

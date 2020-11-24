@@ -2,12 +2,12 @@
 
 {% block body %}
 <h1>
-    Let's look for jobs!
+    Hello from Github Jobs & Flask
 </h1>
+<a href="/jobsearch">Job Search</a>
 <ul>
-    {% for job in job_init %}
-        <li>{{ job['title'] }}</li>
+    {% for job in jobs %}
+        <li> {{job.title}} </li>
     {% endfor %}
 </ul>
-<a href="/jobsearch">Job Search</a>
 {% endblock %}
