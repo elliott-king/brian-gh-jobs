@@ -11,7 +11,7 @@ def index():
     limit = int(request.args.get('limit', '25'))
     jobs = GH.search_jobs(search, limit)
     # https://jinja.palletsprojects.com/en/2.11.x/templates/
-    return render_template('index.html', jobs=jobs)
+    return render_template("index.html", jobs=jobs)
     
 @app.route("/jobsearch", methods=["GET","POST"])
 def job_search():
@@ -26,4 +26,10 @@ def job_search():
             search_limit = 25
         # filtered_jobs = GH.search_jobs(job_title, int(search_limit))
         # don't need the above line because the url parameters get passed into redirect into the index route
-        return redirect(url_for('index', search=job_title, limit=search_limit))
+        return redirect(url_for("index", search=job_title, limit=search_limit))
+
+@app.route("/job/<string:job_id>")
+def job_page(job_id):
+    for job in GH.jobs:
+        if job['id'] == job_id:
+            return render_template("job.html", job=job)

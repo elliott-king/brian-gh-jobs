@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
+{% block body %}
     <head>
         <title>{{job.title}}</title>
     </head>
     <body>
         <h1><a href={{job.url}}>{{job.title}}</a></h1>
         <div>
-          {{job.description}}
+            {{job.description}}
         </div>
     </body>
-</html>
+{% endblock %}
