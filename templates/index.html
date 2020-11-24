@@ -7,7 +7,7 @@
 <a href="/jobsearch">Job Search</a>
 <ul>
     {% for job in jobs %}
-        <li> {{job.title}} </li>
+        <li> <a href=/job/{{job.id}}>{{job.title}}</a> </li>
     {% endfor %}
 </ul>
 {% endblock %}

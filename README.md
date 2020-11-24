@@ -54,6 +54,12 @@ So you know how to use URL parameters (we used them to filter a json response) a
   - The index page should reflect the given search query and limit
   - You can pass query strings in the `url_for` method
 
+## Adding a new route for each job
+
+You can also create a route to show a job. You will want to look at the [variable rules](https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules) section. I made the html template, so you just need to create the route.
+
+The description will probably look a bit crappy, because the html won't correctly parse the `<p>` tag. If you need a reminder of the json format of the jobs, look [here](https://jobs.github.com/positions.json).
+
 # Next Steps
 
 If you have this down, we will go into the concept of 'databases' next. We will follow the more intense [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/) to learn how to create databases & a larger project, then we will make a job board using the Github Jobs. If you want to jump ahead, feel free to start following the tutorial.
